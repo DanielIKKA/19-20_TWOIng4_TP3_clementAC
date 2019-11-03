@@ -1,6 +1,18 @@
 # TP 3: Facebook ultra lite *by* Daniel Ikka OCRES Gr02 
 
 
+**After clone and before try to open the index.html:**
+
+- run terminal command
+```text
+npm install
+(or)
+yarn install
+```
+
+- have fun
+
+----
 A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
 
 <p align="center">

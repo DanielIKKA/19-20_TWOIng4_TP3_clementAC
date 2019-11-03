@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import ProfileInfoComponent from './ProfileInfoComponent'
 import LastComment from './LastCommentComponent'
+import ButtonSelect from './ButtonSelect'
 
 class App extends React.Component {
 
@@ -72,13 +73,15 @@ class App extends React.Component {
         const currentProfile = this.state.profiles[this.state.currentID];
 
         return (
-            <div>
-                {this.state.profiles.map((profile) =>
-                    <button key={profile.id}
-                            onClick={() => this.handleChangeProfile(profile.id)}>
-                        {profile.familyName}
-                    </button>
-                )}
+            <div id={'app-wrapper'}>
+                <div id={'button-wrapper'} className={'row col-12 m-0 p-0 justify-content-end'}>
+                    {this.state.profiles.map((profile) =>
+                        <ButtonSelect key={profile.id}
+                                      profile={profile}
+                                      onChangeProfile={this.handleChangeProfile}
+                        />
+                    )}
+                </div>
 
                 <ProfileInfoComponent profile={currentProfile} onStyleChange={this.handleChangeStyle}/>
 
