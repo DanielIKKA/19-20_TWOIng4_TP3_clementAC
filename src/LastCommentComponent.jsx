@@ -1,16 +1,18 @@
 import React from 'react'
 
 function LastCommentComponent(props) {
+
+    const {profile, onLike} = props;
+
     return (
         <article id={'last-comment-wrapper'}
              className={'my-2 p-2 border'}>
 
             <p className={"text-justify"}>
-                Est superbus habena, cesaris.Est salvus secula, cesaris. Est superbus habena, cesaris.Est salvus secula ,
-                cesaris.
+                {props.profile.lastComment}
             </p>
 
-            <button>C'est super</button>
+            <button onClick={() => onLike(props.profile.id)}>C'est super {profile.like}</button>
         </article>
     );
 }

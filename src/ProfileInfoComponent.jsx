@@ -1,23 +1,53 @@
 import React from 'react'
 
-function ProfileInfoComponent(props) {
+class ProfileInfoComponent extends React.Component {
+
+    style = [
+        {
+            className : 'bg-transparent text-dark'
+        },
+        {
+            className : 'bg-info text-white'
+        },
+        {
+            className : 'bg-secondary text-white'
+        }
+    ];
+
+    render() {
+        const {profile , onStyleChange } = this.props;
+
         return (
             <div id={'profile-wrapper'}
-                 className={'my-2 p-2 d-flex flex-column align-items-center border'}>
+                 className={'my-2 p-2 d-flex flex-column align-items-center border ' +
+                 this.style[profile.currentStyleID].className}>
 
-                <img alt={'profile_pic'}/>
+                <img src={profile.img} alt={'profile_pic'}/>
 
                 <div className={'row col-12'} id={"name&familyName"}>
-                    <p className={'col-6 my-2 py-2 px-0'}>{props.profile.firstname}</p>
-                    <p className={'col-6 my-2 py-2 px-0'}>{props.profile.famillyName}</p>
+                    <p className={'col-6 my-2 py-2 px-0'}>
+                        <span className={'font-weight-bold'}>First name: </span>
+                        {profile.firstName}
+                    </p>
+                    <p className={'col-6 my-2 py-2 px-0'}>
+                        <span className={'font-weight-bold'}>Family name: </span>
+                        {profile.familyName}
+                    </p>
                 </div>
 
-                <p className={'m-0 my-2 col-12'}>{props.profile.birthday}</p>
+                <p className={'m-0 my-2 col-12'}>
+                    <span className={'font-weight-bold'}>Date of birth: </span>
+                    {profile.birthday}
+                </p>
 
                 <button id={'change_style'}
-                        className={'align-self-end'}>Change Style</button>
+                        className={'align-self-end'}
+                        onClick={() => onStyleChange(profile)}>
+                    Change Style
+                </button>
             </div>
         );
+    }
 }
 
 export default ProfileInfoComponent;
