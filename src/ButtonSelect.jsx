@@ -4,7 +4,7 @@ function ButtonSelect(props) {
     const {profile, onChangeProfile} = props;
 
     return (
-        <button className={'mx-2'}
+        <button className={'mx-1'}
                 onClick={() => onChangeProfile(profile.id)}>
             {profile.firstName}
         </button>
