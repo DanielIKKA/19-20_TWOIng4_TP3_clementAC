@@ -6,13 +6,16 @@ function LastCommentComponent(props) {
 
     return (
         <article id={'last-comment-wrapper'}
-             className={'my-2 p-2 border'}>
+             className={'pb-2 px-3 pt-3 border bg-white ' +
+             'offset-lg-3 offset-sm-1 col-lg-6 col-sm-10 col-12 rounded-sm'}>
 
             <p className={"text-justify"}>
-                {props.profile.lastComment}
+                {profile.lastComment}
             </p>
 
-            <button onClick={() => onLike(props.profile.id)}>C'est super {profile.like}</button>
+            <p className={'mt-4 mb-2'}><i className="far fa-thumbs-up"/> {profile.like}</p>
+            <hr className={'my-2'}/>
+            <button onClick={() => onLike(props.profile.id)}>C'est super <i className="far fa-thumbs-up"/></button>
         </article>
     );
 }

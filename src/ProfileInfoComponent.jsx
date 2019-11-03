@@ -2,7 +2,7 @@ import React from 'react'
 
 const Styles = [
     {
-        className : 'bg-transparent text-dark'
+        className : 'bg-white text-dark'
     },
     {
         className : 'bg-info text-white'
@@ -17,10 +17,16 @@ function ProfileInfoComponent(props) {
 
     return (
         <div id={'profile-wrapper'}
-             className={'my-2 p-2 d-flex flex-column align-items-center border ' +
+             className={'my-3 p-3 ' +
+             'd-flex flex-column offset-lg-3 offset-sm-1 col-lg-6 col-sm-10 col-12 ' +
+             'align-items-center border rounded-sm ' +
              Styles[profile.currentStyleID].className}>
 
-            <img src={profile.img} alt={'profile_pic'}/>
+            <img src={profile.img}
+                 height={100}
+                 alt={'profile_pic'}
+                 className={'rounded-circle'}
+            />
 
             <div className={'row col-12'} id={"name&familyName"}>
                 <p className={'col-6 my-2 py-2 px-0'}>
@@ -41,7 +47,7 @@ function ProfileInfoComponent(props) {
             <button id={'change_style'}
                     className={'align-self-end'}
                     onClick={() => onStyleChange(profile)}>
-                Change Style
+                <i className="fas fa-palette"/> Change Style
             </button>
         </div>
     );
