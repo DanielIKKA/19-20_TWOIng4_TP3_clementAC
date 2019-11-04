@@ -18,7 +18,7 @@ function ProfileInfoComponent(props) {
     return (
         <div id={'profile-wrapper'}
              className={'my-3 p-3 ' +
-             'd-flex flex-column offset-lg-3 offset-sm-1 col-lg-6 col-sm-10 col-12 ' +
+             'd-flex flex-column offset-lg-3 offset-sm-2 offset-1 col-lg-6 col-sm-8 col-10 ' +
              'align-items-center border rounded-sm ' +
              Styles[profile.currentStyleID].className}>
 
@@ -45,7 +45,7 @@ function ProfileInfoComponent(props) {
             </p>
 
             <button id={'change_style'}
-                    className={'align-self-end'}
+                    className={'align-self-end text-black-50'}
                     onClick={() => onStyleChange(profile)}>
                 <i className="fas fa-palette"/> Change Style
             </button>

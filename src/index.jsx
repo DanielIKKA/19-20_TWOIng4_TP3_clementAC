@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import ProfileInfoComponent from './ProfileInfoComponent'
 import LastComment from './LastCommentComponent'
 import ButtonSelect from './ButtonSelect'
+import './stylesheet.css'
 
 class App extends React.Component {
 
@@ -74,14 +75,15 @@ class App extends React.Component {
 
         return (
             <div id={'app-wrapper'}>
-                <div id={'button-wrapper'} className={'row col-12 col-lg-11 m-0 p-0 justify-content-end'}>
+                <header id={'button-wrapper'}
+                        className={'row col-12 no-gutters pr-5 py-2 justify-content-end'}>
                     {this.state.profiles.map((profile) =>
                         <ButtonSelect key={profile.id}
                                       profile={profile}
                                       onChangeProfile={this.handleChangeProfile}
                         />
                     )}
-                </div>
+                </header>
 
                 <ProfileInfoComponent profile={currentProfile} onStyleChange={this.handleChangeStyle}/>
 

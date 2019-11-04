@@ -17,7 +17,7 @@ function LastCommentComponent(props) {
     return (
         <article id={'last-comment-wrapper'}
              className={'pb-2 px-3 pt-3 border bg-white ' +
-             'offset-lg-3 offset-sm-1 col-lg-6 col-sm-10 col-12 rounded-sm'}>
+             'offset-lg-3 offset-sm-2 offset-1 col-lg-6 col-sm-8 col-10 rounded-sm'}>
 
             <header className={'mb-2 row col-12 align-items-center'}>
                 <img className={'rounded-circle'} src={profile.img} height={40} alt={'img_profile'}/>
@@ -33,7 +33,7 @@ function LastCommentComponent(props) {
 
             <p className={'mt-4 mb-2'}><i className="far fa-thumbs-up"/> {profile.like}</p>
             <hr className={'my-2'}/>
-            <button onClick={() => onLike(props.profile.id)}>C'est super <i className="far fa-thumbs-up"/></button>
+            <button onClick={() => onLike(props.profile.id)} className={'text-black-50'}>C'est super <i className="far fa-thumbs-up"/></button>
         </article>
     );
 }
